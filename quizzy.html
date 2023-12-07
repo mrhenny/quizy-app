@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* background-image: url(./images/backgroundquizy.png); */
+            /* background-size: auto; */
+        }
+
+        #login-container {
+            /* background-color: #fff; */
+            padding: 20px;
+            border-radius: 8px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            text-align: center;
+            max-width: 1000px;
+            width: 1000px;
+            /* max-height: 1000px; */
+            /* width: 1%; */
+            height: 800px;
+        }
+
+        .logo {
+            /* width: 324px; */
+            width: 25%;
+            height: auto;
+            /* height: 158px; */
+            margin-bottom: 20px;
+            /* text-align: center; */
+
+        }
+
+        .login-heading {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            width: 200px;
+            padding-left: 20%;
+        }
+
+        .login-paragraph {
+            color: #555;
+            margin-bottom: 80px;
+            width: 378px;
+            padding-top: 0px;
+            margin-top: 0;
+            padding-left: 20%;
+            font-size: 30px;
+        }
+
+        input {
+            width: calc(60% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #A950C7;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            outline: 0;
+            font-size: 25px;
+        }
+        
+
+        .eye-icon {
+            position: relative;
+            margin-bottom: 15px;
+            /* width: 50px; */
+        }
+
+        #password {
+            padding-right: 30px;
+        }
+
+        #eye {
+            position: absolute;
+            top: 50%;
+            right: 21%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
+
+        .forgot-password {
+            color: #007bff;
+            text-decoration: none;
+            margin-bottom: 35px;
+            display: block;
+            text-align: left;
+            width: 130px;
+            margin-left: 66%;
+            /* display: flex; */
+            /* flex-direction: column-reverse; */
+        }
+
+        .login-btn {
+            background-color: #A950C7;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 60%;
+            height: 7%;
+            font-size: 25px;
+        }
+
+        .signup-span {
+            display: block;
+            margin-top: 120px;
+            font-size: 20px;
+            color: #555;
+        }
+
+        @media (max-width: 767px) {
+            .login-heading{
+                font-size: 30px;
+                padding-left: 11%;
+            }
+            .login-paragraph{
+                font-size: 20px;
+                padding-left: 7.5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="login-container">
+    <img src="./images/logo of quizy.png" alt="Company Logo" class="logo">
+    <h2 class="login-heading">Sign In</h2>
+    <p class="login-paragraph">Please sign in to continue</p>
+
+    <input type="email" placeholder="Email">
+    <div class="eye-icon">
+        <input type="password" placeholder="Password" id="password">
+        <img src="./images/eye.png" alt="Eye Icon" id="eye" onclick="togglePassword()">
+    </div>
+
+    <a href="#" class="forgot-password">Forgot Password?</a>
+
+    <button class="login-btn">Login</button>
+
+    <span class="signup-span">Don't have an account? <a href="#">Sign Up</a></span>
+</div>
+
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        var eyeIcon = document.getElementById("eye");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            eyeIcon.src = "./images/eye.png"; // Replace with your eye-off icon
+        } else {
+            passwordField.type = "password";
+            eyeIcon.src = "./images/eye.png";
+        }
+    }
+</script>
+
+</body>
+</html>
